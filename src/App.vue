@@ -1,26 +1,63 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <component
+      :is="currentStepComponent"
+      @next-step="nextStep"
+      @prev-step="prevStep"
+      @confirm="confirm"
+    />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import YourInfo from "@/components/YourInfo";
+import SelectPlan from "@/components/SelectPlan";
+import AddOns from "@/components/AddOns";
+import SummaryInformation from "@/components/SummaryInformation";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    YourInfo,
+    SelectPlan,
+    AddOns,
+    SummaryInformation
+  },
+  data() {
+    return {
+      currentStep: 1
+    };
+  },
+  computed: {
+    currentStepComponent() {
+      switch (this.currentStep) {
+        case 1:
+          return "YourInfo";
+        case 2:
+          return "SelectPlan";
+        case 3:
+          return "AddOns";
+        case 4:
+          return "SummaryInformation";
+        default:
+          return null;
+      }
+    }
+  },
+  methods: {
+    nextStep() {
+      if (this.currentStep < 4) {
+        this.currentStep++;
+      }
+    },
+    prevStep() {
+      if (this.currentStep > 1) {
+        this.currentStep--;
+      }
+    },
+    confirm() {
+      // Handle confirm logic, e.g., submit the form data
+      console.log("Form confirmed!");
+    }
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
