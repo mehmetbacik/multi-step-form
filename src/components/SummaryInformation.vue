@@ -13,7 +13,7 @@
                 this.$emit('prev-step');
             },
             confirm() {
-                this.$emit('confirm');
+                this.$emit('next-step');
             }
             },
             computed: {
