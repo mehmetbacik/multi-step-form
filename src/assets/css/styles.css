@@ -2,46 +2,171 @@
 
 /*App*/
 #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
   
-  .main-container {
-    display: flex;
-    width: 80%;
-    border: 1px solid #ccc;
-    overflow: hidden;
-  }
+.main-container {
+  display: flex;
+  width: 80%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
 /*App*/
 
-    /*YourInfo*/
-  .error-message {
-    color: red;
-    margin-top: 5px;
-  }
-  .is-invalid {
-    border: 1px solid red;
-  }
-   /*YourInfo*/
+/*YourInfo*/
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
 
-  /*Main*/
-  .progress-bar {
-    display: flex;
-    margin-bottom: 20px;
-  }
+.is-invalid {
+  border: 1px solid red;
+}
+/*YourInfo*/
+
+/*Main*/
+.progress-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
   
-  .progress-bar div {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-  }
+.progress-bar div {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
   
-  .progress-bar div.active {
-    background-color: #4caf50;
-    color: white;
-  }
-    /*Main*/
+.progress-bar div.active {
+  background-color: #4caf50;
+  color: white;
+}
+/*Main*/
+
+/*SelectPlan*/
+.plan-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.plan-options div {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.plan-options div {
+  position: relative;
+}
+
+.plan-options div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent; 
+  pointer-events: none;
+}
+
+.plan-options div:hover::before,
+.plan-options div input:checked::before,
+.plan-options div input:focus::before {
+  border-color: #3498db;
+}
+
+.plan-options div {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.plan-options div.selected {
+  border-color: #3498db;
+}
+
+.billing-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*SelectPlan*/
