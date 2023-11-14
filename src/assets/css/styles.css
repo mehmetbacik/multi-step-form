@@ -170,3 +170,27 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /*SelectPlan*/
+
+/*AddOns*/
+.addon-options div {
+  border: 2px solid #ccc;
+  margin: 5px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.addon-options div.selected-addon {
+  border-color: #4caf50;
+}
+
+.addon-options div label {
+  cursor: pointer;
+}
+
+.addon-options div input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/*AddOns*/
