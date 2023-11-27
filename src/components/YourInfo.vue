@@ -69,17 +69,15 @@
                 };
         
                 if (this.isFormValid) {
-                // Bilgileri yerel depolamaya kaydet
                 localStorage.setItem('name', this.name);
                 localStorage.setItem('email', this.email);
                 localStorage.setItem('phone', this.phone);
         
-                // İleri gitme işlemi burada gerçekleştirilebilir
+                
                 this.$emit('next-step', { name: this.name, email: this.email, phone: this.phone });
                 }
             },
             isValidEmail(email) {
-                // Basit bir email doğrulama
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return emailRegex.test(email);
             },
