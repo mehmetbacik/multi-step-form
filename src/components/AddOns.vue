@@ -7,18 +7,16 @@
                 :key="index"
                 :class="{ 'selected-addon': selectedAddons.includes(addon.name) }"
                 @click="toggleAddon(addon.name)"
-                >
+            >
                 <input
-                type="checkbox"
-                :id="`addon-${index}`"
-                :value="addon.name"
-                v-model="selectedAddons"
-                @change="checkNextButton"
+                    type="checkbox"
+                    :id="`addon-${index}`"
+                    :value="addon.name"
+                    v-model="selectedAddons"
+                    @change="checkNextButton"
                 />
-                <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{
-                addon.name
-                }}</label>
-                <p>Price: {{ addon.price }}</p>
+                <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{ addon.name }}</label>
+                <p>Price: {{ calculateAddonPrice(addon.price) }}</p>
                 <p>{{ addon.description }}</p>
             </div>
         </div>
@@ -31,23 +29,23 @@
 export default {
     data() {
         return {
-        addons: [
-            {
-                name: "Online Service",
-                price: 5,
-                description: "Access to online gaming services.",
-            },
-            {
-                name: "Larger Storage",
-                price: 10,
-                description: "Get additional storage space for your games.",
-            },
-            {
-                name: "Customizable Profile",
-                price: 7,
-                description: "Customize your gaming profile.",
-            },
-        ],
+            addons: [
+                {
+                    name: "Online Service",
+                    price: { yearly: 50, monthly: 5 },
+                    description: "Access to online gaming services.",
+                },
+                {
+                    name: "Larger Storage",
+                    price: { yearly: 100, monthly: 8 },
+                    description: "Get additional storage space for your games.",
+                },
+                {
+                    name: "Customizable Profile",
+                    price: { yearly: 75, monthly: 10 },
+                    description: "Customize your gaming profile.",
+                },
+            ],
             selectedAddons: [],
             isNextButtonActive: false,
         };
@@ -64,10 +62,13 @@ export default {
             this.checkNextButton();
             this.saveToLocalStorage();
         },
+        calculateAddonPrice(basePrice) {
+            return basePrice[this.isYearly ? 'yearly' : 'monthly'];
+        },
         nextStep() {
             if (this.isNextButtonActive) {
                 this.$emit("next-step");
-        }
+            }
         },
         prevStep() {
             this.$emit("prev-step");
@@ -75,7 +76,7 @@ export default {
         checkNextButton() {
             this.isNextButtonActive = this.selectedAddons.length > 0;
         },
-            saveToLocalStorage() {
+        saveToLocalStorage() {
             localStorage.setItem("addOns", JSON.stringify(this.selectedAddons));
         },
     },
@@ -85,6 +86,12 @@ export default {
             this.selectedAddons = savedAddOns;
             this.checkNextButton();
         }
+    },
+    computed: {
+        isYearly() {
+            const selectPlanData = JSON.parse(localStorage.getItem("selectPlan"));
+            return selectPlanData ? selectPlanData.isYearly : false;
+        },
     },
 };
 </script>

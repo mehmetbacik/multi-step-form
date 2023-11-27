@@ -9,7 +9,7 @@
             :class="{ 'selected': selectedPlan === plan.name }"
             >
             <h3>{{ plan.name }}</h3>
-            <p>Price: {{ plan.price }} {{ billingCycle }}</p>
+            <p>Price: {{ plan.price[isYearly ? 'yearly' : 'monthly'] }} {{ billingCycle }}</p>
             <p>{{ plan.description }}</p>
             </div>
         </div>
@@ -27,18 +27,18 @@
 
 <script>
     export default {
-    data() {
-        return {
-            plans: [
-            { name: 'Arcade', price: 10, description: 'Basic plan for arcade gaming.' },
-            { name: 'Advanced', price: 20, description: 'Advanced plan for gaming enthusiasts.' },
-            { name: 'Pro', price: 30, description: 'Professional plan for serious gamers.' },
-            ],
-            selectedPlan: null,
-            isNextButtonActive: false,
-            isYearly: false,
-        };
-    },
+        data() {
+            return {
+                plans: [
+                    { name: 'Arcade', price: { yearly: 120, monthly: 10 }, description: 'Basic plan for arcade gaming.' },
+                    { name: 'Advanced', price: { yearly: 240, monthly: 20 }, description: 'Advanced plan for gaming enthusiasts.' },
+                    { name: 'Pro', price: { yearly: 360, monthly: 30 }, description: 'Professional plan for serious gamers.' },
+                ],
+                selectedPlan: null,
+                isNextButtonActive: false,
+                isYearly: false,
+            };
+        },
         computed: {
             billingCycle() {
                 return this.isYearly ? 'Yearly' : 'Monthly';
@@ -56,7 +56,7 @@
             },
             nextStep() {
                 if (this.isNextButtonActive) {
-                this.$emit('next-step');
+                    this.$emit('next-step');
                 }
             },
             prevStep() {
@@ -67,20 +67,20 @@
             },
             saveToLocalStorage() {
                 localStorage.setItem('selectPlan', JSON.stringify({
-                selectedPlan: this.selectedPlan,
-                isYearly: this.isYearly,
+                    selectedPlan: this.selectedPlan,
+                    isYearly: this.isYearly,
                 }));
             },
             loadFromLocalStorage() {
                 const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
                 if (selectPlanData) {
-                this.selectedPlan = selectPlanData.selectedPlan;
-                this.isYearly = selectPlanData.isYearly;
-                this.checkNextButton();
+                    this.selectedPlan = selectPlanData.selectedPlan;
+                    this.isYearly = selectPlanData.isYearly;
+                    this.checkNextButton();
                 }
             },
         },
-            created() {
+        created() {
             this.loadFromLocalStorage();
         },
     };
