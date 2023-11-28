@@ -81,12 +81,14 @@ export default {
         },
     },
     created() {
-        const savedAddOns = JSON.parse(localStorage.getItem("addOns"));
-        if (savedAddOns) {
-            this.selectedAddons = savedAddOns;
-            this.checkNextButton();
-        }
-    },
+    const savedAddOns = JSON.parse(localStorage.getItem("addOns"));
+    if (Array.isArray(savedAddOns)) {
+        this.selectedAddons = savedAddOns;
+        this.checkNextButton();
+    } else {
+        this.selectedAddons = [];
+    }
+},
     computed: {
         isYearly() {
             const selectPlanData = JSON.parse(localStorage.getItem("selectPlan"));
