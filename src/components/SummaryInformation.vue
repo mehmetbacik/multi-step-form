@@ -37,11 +37,11 @@ export default {
         selectedPlan() {
             const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
             const plan = this.plans.find(plan => plan.name === selectPlanData.selectedPlan);
-            return plan ? { ...plan, billingCycle: selectPlanData.isYearly ? 'Yearly' : 'Monthly' } : null;
+            return plan ? { ...plan, billingCycle: selectPlanData.isYearly ? 'yearly' : 'monthly' } : null;
         },
         billingCycle() {
             const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
-            return selectPlanData ? (selectPlanData.isYearly ? 'Yearly' : 'Monthly') : '';
+            return selectPlanData ? (selectPlanData.isYearly ? 'yearly' : 'monthly') : '';
         },
         selectedAddons() {
             const savedAddOns = JSON.parse(localStorage.getItem('addOns'));
@@ -59,9 +59,9 @@ export default {
                 { name: 'Pro', price: { yearly: 360, monthly: 30 }, description: 'Professional plan for serious gamers.' },
             ],
             addons: [
-                { name: 'Online Service', price: { yearly: 5, monthly: 0.5 }, description: 'Access to online gaming services.' },
-                { name: 'Larger Storage', price: { yearly: 10, monthly: 1 }, description: 'Get additional storage space for your games.' },
-                { name: 'Customizable Profile', price: { yearly: 7, monthly: 0.7 }, description: 'Customize your gaming profile.' },
+                { name: 'Online Service', price: { yearly: 50, monthly: 5 }, description: 'Access to online gaming services.' },
+                { name: 'Larger Storage', price: { yearly: 100, monthly: 8 }, description: 'Get additional storage space for your games.' },
+                { name: 'Customizable Profile', price: { yearly: 75, monthly: 10 }, description: 'Customize your gaming profile.' },
             ],
         };
     },
