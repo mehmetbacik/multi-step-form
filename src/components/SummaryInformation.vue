@@ -16,7 +16,9 @@
             </ul>
         </div>
         <button @click="prevStep">Back</button>
-        <button @click="confirm" :disabled="!isConfirmEnabled">Confirm</button>
+        <router-link :title="title" to="/FormCompleted">
+            <button @click="confirm" :disabled="!isConfirmEnabled">Confirm</button>
+        </router-link>
     </div>
 </template>
 
