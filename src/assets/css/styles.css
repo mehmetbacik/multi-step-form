@@ -1,6 +1,10 @@
 @import "variables";
 
 /*App*/
+body {
+  background-color: var(--magnolia);
+}
+
 #app {
   display: flex;
   justify-content: center;
