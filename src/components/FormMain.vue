@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-content">
     <div class="progress-bar">
       <div
         v-for="(step, index) in steps"
