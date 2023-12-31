@@ -23,8 +23,8 @@
             </label>
             <span>{{ billingCycle }}</span>
         </div>
-        <button @click="prevStep">Back</button>
-        <button @click="nextStep" :disabled="!isNextButtonActive">Next</button>
+        <button @click="prevStep">Go Back</button>
+        <button @click="nextStep" :disabled="!isNextButtonActive">Next Step</button>
     </div>
 </template>
 

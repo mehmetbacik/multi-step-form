@@ -218,13 +218,18 @@ body {
   margin: 0;
 }
 
-.plan-options {
+.select-plan .plan-options {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  gap: 20px;
 }
 
+
+
+
 .plan-options div {
+  border-radius: 10px;
   border: 1px solid #ccc;
   padding: 10px;
 }
