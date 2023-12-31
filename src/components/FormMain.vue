@@ -1,12 +1,18 @@
 <template>
   <div class="form-content">
     <div class="progress-bar">
-      <div
+      <div class="steps"
         v-for="(step, index) in steps"
         :key="index"
         :class="{ active: index + 1 === currentStep }"
       >
-        {{ step }}
+        <div class="step-number">
+          {{ step.number }}
+        </div>
+        <div class="step-headline">
+          <span class="step-label">{{ step.label }}</span>
+          <span class="step-title">{{ step.title }}</span>
+        </div>
       </div>
     </div>
     <div class="content">
@@ -31,11 +37,11 @@ export default {
     return {
       currentStep: 1,
       steps: [
-        "Your Info",
-        "Select Plan",
-        "Add-Ons",
-        "SummaryInformation",
-        "FormCompleted",
+        { number: 1, label: "Step 1", title: "Your Info" },
+        { number: 2, label: "Step 2", title: "Select Plan" },
+        { number: 3, label: "Step 3", title: "Add-Ons" },
+        { number: 4, label: "Step 4", title: "Summary Information" },
+        { number: 5, label: "Step 5", title: "Form Completed" },
       ],
     };
   },
