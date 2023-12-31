@@ -35,9 +35,9 @@
         data() {
             return {
                 plans: [
-                    { name: 'Arcade', price: { yearly: 120, monthly: 10 }, description: 'Basic plan for arcade gaming.' },
-                    { name: 'Advanced', price: { yearly: 240, monthly: 20 }, description: 'Advanced plan for gaming enthusiasts.' },
-                    { name: 'Pro', price: { yearly: 360, monthly: 30 }, description: 'Professional plan for serious gamers.' },
+                    { name: 'Arcade', price: { yearly: 120, monthly: 10 }, },
+                    { name: 'Advanced', price: { yearly: 240, monthly: 20 }, },
+                    { name: 'Pro', price: { yearly: 360, monthly: 30 }, },
                 ],
                 selectedPlan: null,
                 isNextButtonActive: false,
