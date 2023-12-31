@@ -225,6 +225,12 @@ body {
   gap: 20px;
 }
 
+.select-plan .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 
 
