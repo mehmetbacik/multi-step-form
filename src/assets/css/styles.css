@@ -30,6 +30,8 @@ body {
 .your-info {
   margin-left: 60px;
   margin-right: 60px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .your-info .headline {
@@ -135,17 +137,58 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
+  padding: 30px;
 }
   
 .progress-bar .steps {
   text-align: center;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
   
 .progress-bar .steps.active {
-  color: white;
+  color: var(--white);
+}
+
+.progress-bar .steps .step-headline {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.progress-bar .steps .step-headline .step-label {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--cool-gray);
+}
+
+.progress-bar .steps .step-headline .step-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--white);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.progress-bar .steps .step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--white);
+  background-color: transparent;
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.progress-bar .steps.active .step-number {
+  border: solid 1px var(--light-blue);
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
 }
 /*ProgressBar*/
 

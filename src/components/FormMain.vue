@@ -40,7 +40,7 @@ export default {
         { number: 1, label: "Step 1", title: "Your Info" },
         { number: 2, label: "Step 2", title: "Select Plan" },
         { number: 3, label: "Step 3", title: "Add-Ons" },
-        { number: 4, label: "Step 4", title: "Summary Information" },
+        { number: 4, label: "Step 4", title: "Summary" },
         { number: 5, label: "Step 5", title: "Form Completed" },
       ],
     };
