@@ -2,6 +2,8 @@
 
 /*App*/
 body {
+  font-family: var(--theme-font);
+  font-size: var(--theme-size);
   background-color: var(--magnolia);
 }
 
@@ -12,11 +14,6 @@ body {
   height: 100vh;
 }
   
-.main-container {
-  display: flex;
-  width: 80%;
-  overflow: hidden;
-}
 /*App*/
 
 /*FormMain*/
@@ -29,6 +26,116 @@ body {
   padding: 20px;
 }
 /*FormMain*/
+
+/*YourInfo*/
+.your-info {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.your-info .headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.your-info .headline span {
+  color: var(--marine-blue);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.your-info .headline p {
+  color: var(--cool-gray);
+  font-weight: 400;
+  margin: 0;
+}
+
+.your-info form .input-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.your-info form .input-content .title-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.your-info form .input-content .title-area label {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
+.your-info form .input-content .title-area .error-message {
+  color: var(--strawberry-red);
+  font-weight: bold;
+}
+
+.your-info form .input-content input {
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  color: var(--marine-blue);
+  font-weight: bold;
+}
+
+.your-info form .input-content input:focus {
+  border-color: var(--purplish-blue);
+}
+
+.your-info form .input-content input::placeholder {
+  color: var(--marine-blue);
+}
+
+.your-info form .input-content .is-invalid {
+  border: 1px solid var(--strawberry-red);
+}
+
+.your-info form .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
+
+.your-info form .button-area button {
+  padding: 14px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background-color: var(--purplish-blue);
+  color: var(--white);
+}
+
+.your-info form .button-area button:hover {
+  background-color: var(--marine-blue);
+  cursor: pointer;
+}
+
+.your-info form .button-area button:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+/*YourInfo*/
+
+
+
+
+
+
+
+
+
+
+
 
 /*ProgressBar*/
 .progress-bar {
@@ -45,7 +152,6 @@ body {
   text-align: center;
   padding: 10px;
   /*background-color: #eee;*/
-  border: 1px solid #ccc;
 }
   
 .progress-bar div.active {
@@ -54,16 +160,7 @@ body {
 }
 /*ProgressBar*/
 
-/*YourInfo*/
-.error-message {
-  color: red;
-  margin-top: 5px;
-}
 
-.is-invalid {
-  border: 1px solid red;
-}
-/*YourInfo*/
 
 
 

@@ -1,9 +1,15 @@
 <template>
-    <div>
-        <h2>Your Info</h2>
+    <div class="your-info">
+        <div class="headline">
+            <span>Personal info</span>
+            <p>Please provide your name, email address, and phone number.</p>
+        </div>
         <form @submit.prevent="validateAndProceed">
-            <div>
-                <label for="name">Name:</label>
+            <div class="input-content">
+                <div class="title-area">
+                    <label for="name">Name</label>
+                    <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
+                </div>
                 <input
                     type="text"
                     id="name"
@@ -11,10 +17,12 @@
                     @blur="validateName"
                     :class="{ 'is-invalid': errors.name }"
                 />
-                <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
             </div>
-            <div>
-                <label for="email">Email Address:</label>
+            <div class="input-content">
+                <div class="title-area">
+                    <label for="email">Email Address</label>
+                    <div v-if="errors.email" class="error-message">{{ errors.email }}</div>
+                </div>
                 <input
                     type="email"
                     id="email"
@@ -22,10 +30,12 @@
                     @blur="validateEmail"
                     :class="{ 'is-invalid': errors.email }"
                 />
-                <div v-if="errors.email" class="error-message">{{ errors.email }}</div>
             </div>
-            <div>
-                <label for="phone">Phone Number:</label>
+            <div class="input-content">
+                <div class="title-area">
+                    <label for="phone">Phone Number</label>
+                    <div v-if="errors.phone" class="error-message">{{ errors.phone }}</div>
+                </div>
                 <input
                     type="text"
                     id="phone"
@@ -34,9 +44,11 @@
                     @blur="validatePhoneNumber"
                     :class="{ 'is-invalid': errors.phone }"
                 />
-                <div v-if="errors.phone" class="error-message">{{ errors.phone }}</div>
             </div>
-            <button :disabled="!isFormValid" type="submit">Next</button>
+            <div class="button-area">
+                <button :disabled="!isFormValid" type="submit">Next Step</button>
+            </div>
+            
         </form>
     </div>
 </template>

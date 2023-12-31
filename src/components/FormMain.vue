@@ -10,7 +10,11 @@
       </div>
     </div>
     <div class="content">
-      <component :is="currentStepComponent" @next-step="nextStep" @prev-step="prevStep" />
+      <component
+        :is="currentStepComponent"
+        @next-step="nextStep"
+        @prev-step="prevStep"
+      />
     </div>
   </div>
 </template>
@@ -20,12 +24,19 @@ import YourInfo from "@/components/YourInfo.vue";
 import SelectPlan from "@/components/SelectPlan.vue";
 import AddOns from "@/components/AddOns.vue";
 import SummaryInformation from "@/components/SummaryInformation.vue";
+import FormCompleted from "@/components/FormCompleted.vue";
 
 export default {
   data() {
     return {
       currentStep: 1,
-      steps: ["Your Info", "Select Plan", "Add-Ons", "SummaryInformation"],
+      steps: [
+        "Your Info",
+        "Select Plan",
+        "Add-Ons",
+        "SummaryInformation",
+        "FormCompleted",
+      ],
     };
   },
   computed: {
@@ -39,6 +50,8 @@ export default {
           return "AddOns";
         case 4:
           return "SummaryInformation";
+        case 5:
+          return "FormCompleted";
         default:
           return null;
       }
@@ -63,6 +76,7 @@ export default {
     SelectPlan,
     AddOns,
     SummaryInformation,
+    FormCompleted,
   },
 };
 </script>
