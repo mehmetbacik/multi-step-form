@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <h2>Select Plan</h2>
+    <div class="select-plan">
+        <div class="headline">
+            <span>Select your plan</span>
+            <p>You have the option of monthly or yearly billing.</p>
+        </div>
         <div class="plan-options">
             <div
             v-for="(plan, index) in plans"
