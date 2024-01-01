@@ -46,7 +46,7 @@
                 />
             </div>
             <div class="button-area">
-                <button :disabled="!isFormValid" type="submit">Next Step</button>
+                <button :disabled="!isFormValid" type="submit" class="next-button">Next Step</button>
             </div>
             
         </form>
