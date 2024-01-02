@@ -6,20 +6,20 @@
         </div>
         <div class="plan-options">
             <div
-            v-for="(plan, index) in plans"
-            :key="index"
-            @click="selectPlan(plan.name)"
-            :class="{ 'selected': selectedPlan === plan.name }"
+                v-for="(plan, index) in plans"
+                :key="index"
+                @click="selectPlan(plan.name)"
+                :class="{ 'selected': selectedPlan === plan.name, [plan.class]: true }"
             >
-            <h3>{{ plan.name }}</h3>
-            <p>Price: {{ plan.price[isYearly ? 'yearly' : 'monthly'] }} {{ billingCycle }}</p>
-            <p>{{ plan.description }}</p>
+                <h3>{{ plan.name }}</h3>
+                <p>Price: {{ plan.price[isYearly ? 'yearly' : 'monthly'] }} {{ billingCycle }}</p>
+                <p>{{ plan.description }}</p>
             </div>
         </div>
         <div class="billing-toggle">
             <label class="switch">
-            <input type="checkbox" v-model="isYearly" @change="toggleBillingCycle" />
-            <span class="slider"></span>
+                <input type="checkbox" v-model="isYearly" @change="toggleBillingCycle" />
+                <span class="slider"></span>
             </label>
             <span>{{ billingCycle }}</span>
         </div>
@@ -35,9 +35,9 @@
         data() {
             return {
                 plans: [
-                    { name: 'Arcade', price: { yearly: 120, monthly: 10 }, },
-                    { name: 'Advanced', price: { yearly: 240, monthly: 20 }, },
-                    { name: 'Pro', price: { yearly: 360, monthly: 30 }, },
+                    { name: 'Arcade', price: { yearly: 120, monthly: 10 }, class: 'arcade-plan' },
+                    { name: 'Advanced', price: { yearly: 240, monthly: 20 }, class: 'advanced-plan' },
+                    { name: 'Pro', price: { yearly: 360, monthly: 30 }, class: 'pro-plan' },
                 ],
                 selectedPlan: null,
                 isNextButtonActive: false,

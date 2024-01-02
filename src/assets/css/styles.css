@@ -264,6 +264,20 @@ body {
   color: var(--marine-blue);
 }
 
+.select-plan .plan-options .arcade-plan:before {
+  content: url('../image/icon-arcade.svg');
+}
+
+.select-plan .plan-options .advanced-plan:before {
+  content: url('../image/icon-advanced.svg');
+}
+
+.select-plan .plan-options .pro-plan:before {
+  content: url('../image/icon-pro.svg');
+}
+
+
+
 
 .plan-options div {
   border-radius: 10px;
@@ -290,6 +304,7 @@ body {
 .plan-options div input:checked::before,
 .plan-options div input:focus::before {
   border-color: #3498db;
+  border-radius: 10px;
 }
 
 .plan-options div {
