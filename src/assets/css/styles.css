@@ -276,47 +276,44 @@ body {
   content: url('../image/icon-pro.svg');
 }
 
-
-
-
-.plan-options div {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.plan-options div {
+.select-plan .plan-options .plan-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--light-gray);
+  padding: 20px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.plan-options div::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid transparent; 
-  pointer-events: none;
+.select-plan .plan-options .plan-content div span {
+  margin: 0;
 }
 
-.plan-options div:hover::before,
-.plan-options div input:checked::before,
-.plan-options div input:focus::before {
-  border-color: #3498db;
+.select-plan .plan-options .plan-content div p {
+  margin: 0;
+}
+
+.select-plan .plan-options .plan-content:hover::before,
+.select-plan .plan-options .plan-content input:checked::before,
+.select-plan .plan-options .plan-content input:focus::before {
+  border-color: var(--purplish-blue);
   border-radius: 10px;
 }
 
-.plan-options div {
-  cursor: pointer;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
+.select-plan .plan-options .plan-content:hover {
+  border-color: var(--purplish-blue);
 }
 
-.plan-options div.selected {
-  border-color: #3498db;
+.select-plan .plan-options .plan-content.selected {
+  border-color: var(--purplish-blue);
 }
+
+
+
+
 
 .billing-toggle {
   display: flex;
