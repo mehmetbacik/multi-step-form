@@ -19,11 +19,12 @@
             </div>
         </div>
         <div class="billing-toggle">
+            <span>Monthly</span>
             <label class="switch">
                 <input type="checkbox" v-model="isYearly" @change="toggleBillingCycle" />
                 <span class="slider"></span>
             </label>
-            <span>{{ billingCycle }}</span>
+            <span>Yearly</span>
         </div>
         <div class="button-area">
             <button @click="prevStep" class="back-button">Go Back</button>

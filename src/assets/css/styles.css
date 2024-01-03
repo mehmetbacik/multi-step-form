@@ -280,20 +280,27 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-basis: 33%;
   gap: 30px;
   border-radius: 10px;
   border: 1px solid var(--light-gray);
   padding: 20px 15px;
   margin-bottom: 10px;
   cursor: pointer;
+  width: 102px;
 }
 
 .select-plan .plan-options .plan-content div span {
   margin: 0;
+  font-weight: bold;
+  color: var(--marine-blue)
 }
 
 .select-plan .plan-options .plan-content div p {
   margin: 0;
+  padding-top: 5px;
+  font-weight: 500;
+  color: var(--cool-gray);
 }
 
 .select-plan .plan-options .plan-content:hover::before,
@@ -309,28 +316,31 @@ body {
 
 .select-plan .plan-options .plan-content.selected {
   border-color: var(--purplish-blue);
+  background-color: var(--alabaster);
 }
 
-
-
-
-
-.billing-toggle {
+.select-plan .billing-toggle {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-bottom: 95px;
+  background-color: var(--alabaster);
+  border-radius: 10px;
 }
+
+
+
+
+
+
 
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.billing-toggle {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-}
+
 
 .switch {
   position: relative;
