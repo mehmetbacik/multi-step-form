@@ -344,6 +344,15 @@ body {
   height: 0;
 }
 
+.select-plan .billing-toggle .time-text {
+  font-weight: bold;
+  color: var(--cool-gray);
+}
+
+.select-plan .billing-toggle .time-text.active {
+  color: var(--marine-blue);
+}
+
 .select-plan .billing-toggle .slider {
   position: absolute;
   cursor: pointer;

@@ -19,12 +19,12 @@
             </div>
         </div>
         <div class="billing-toggle">
-            <span>Monthly</span>
+            <span class="time-text" :class="{ 'active': !isYearly }">Monthly</span>
             <label class="switch">
                 <input type="checkbox" v-model="isYearly" @change="toggleBillingCycle" />
                 <span class="slider"></span>
             </label>
-            <span>Yearly</span>
+            <span class="time-text" :class="{ 'active': isYearly }">Yearly</span>
         </div>
         <div class="button-area">
             <button @click="prevStep" class="back-button">Go Back</button>
