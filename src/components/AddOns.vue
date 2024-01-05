@@ -26,8 +26,10 @@
                 <p>+${{ calculateAddonPrice(addon.price) }}/{{ billingCycle }}</p>
             </div>
         </div>
-        <button @click="prevStep">Back</button>
-        <button @click="nextStep" :disabled="!isNextButtonActive">Next</button>
+        <div class="button-area">
+            <button class="back-button" @click="prevStep">Go Back</button>
+            <button class="next-button" @click="nextStep" :disabled="!isNextButtonActive">Next Step</button>
+        </div>
     </div>
 </template>
 
