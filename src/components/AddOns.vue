@@ -41,17 +41,17 @@ export default {
                 {
                     name: "Online Service",
                     price: { yearly: 50, monthly: 1 },
-                    description: "Access to online gaming services.",
+                    description: "Access to multiplayer games",
                 },
                 {
                     name: "Larger Storage",
                     price: { yearly: 100, monthly: 2 },
-                    description: "Get additional storage space for your games.",
+                    description: "Extra 1TB of cloud save",
                 },
                 {
                     name: "Customizable Profile",
                     price: { yearly: 75, monthly: 2 },
-                    description: "Customize your gaming profile.",
+                    description: "Custom thme on your profile",
                 },
             ],
             selectedAddons: [],
