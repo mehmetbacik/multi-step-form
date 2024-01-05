@@ -1,10 +1,14 @@
 <template>
-    <div>
-        <h2>Add-Ons</h2>
+    <div class="add-ons">
+        <div class="headline">
+            <span>Pick add-ons</span>
+            <p>Add-ons help enhance your gaming experience.</p>
+        </div>
         <div class="addon-options">
             <div
                 v-for="(addon, index) in addons"
                 :key="index"
+                class="content"
                 :class="{ 'selected-addon': selectedAddons.includes(addon.name) }"
                 @click="toggleAddon(addon.name)"
             >
@@ -15,9 +19,11 @@
                     v-model="selectedAddons"
                     @change="checkNextButton"
                 />
-                <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{ addon.name }}</label>
-                <p>Price: {{ calculateAddonPrice(addon.price) }}</p>
-                <p>{{ addon.description }}</p>
+                <div>
+                    <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{ addon.name }}</label>
+                    <p>{{ addon.description }}</p>
+                </div>
+                <p>+${{ calculateAddonPrice(addon.price) }}/{{ billingCycle }}</p>
             </div>
         </div>
         <button @click="prevStep">Back</button>
@@ -32,17 +38,17 @@ export default {
             addons: [
                 {
                     name: "Online Service",
-                    price: { yearly: 50, monthly: 5 },
+                    price: { yearly: 50, monthly: 1 },
                     description: "Access to online gaming services.",
                 },
                 {
                     name: "Larger Storage",
-                    price: { yearly: 100, monthly: 8 },
+                    price: { yearly: 100, monthly: 2 },
                     description: "Get additional storage space for your games.",
                 },
                 {
                     name: "Customizable Profile",
-                    price: { yearly: 75, monthly: 10 },
+                    price: { yearly: 75, monthly: 2 },
                     description: "Customize your gaming profile.",
                 },
             ],
@@ -81,15 +87,18 @@ export default {
         },
     },
     created() {
-    const savedAddOns = JSON.parse(localStorage.getItem("addOns"));
-    if (Array.isArray(savedAddOns)) {
-        this.selectedAddons = savedAddOns;
-        this.checkNextButton();
-    } else {
-        this.selectedAddons = [];
-    }
-},
+        const savedAddOns = JSON.parse(localStorage.getItem("addOns"));
+        if (Array.isArray(savedAddOns)) {
+            this.selectedAddons = savedAddOns;
+            this.checkNextButton();
+        } else {
+            this.selectedAddons = [];
+        }
+    },
     computed: {
+        billingCycle() {
+            return this.isYearly ? 'yr' : 'mo';
+        },
         isYearly() {
             const selectPlanData = JSON.parse(localStorage.getItem("selectPlan"));
             return selectPlanData ? selectPlanData.isYearly : false;
