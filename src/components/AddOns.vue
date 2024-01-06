@@ -12,16 +12,18 @@
                 :class="{ 'selected-addon': selectedAddons.includes(addon.name) }"
                 @click="toggleAddon(addon.name)"
             >
-                <input
-                    type="checkbox"
-                    :id="`addon-${index}`"
-                    :value="addon.name"
-                    v-model="selectedAddons"
-                    @change="checkNextButton"
-                />
-                <div>
-                    <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{ addon.name }}</label>
-                    <p>{{ addon.description }}</p>
+                <div class="area">
+                    <input
+                        type="checkbox"
+                        :id="`addon-${index}`"
+                        :value="addon.name"
+                        v-model="selectedAddons"
+                        @change="checkNextButton"
+                    />
+                    <div class="description">
+                        <label :for="`addon-${index}`" @click="toggleAddon(addon.name)">{{ addon.name }}</label>
+                        <p>{{ addon.description }}</p>
+                    </div>
                 </div>
                 <p>+${{ calculateAddonPrice(addon.price) }}/{{ billingCycle }}</p>
             </div>

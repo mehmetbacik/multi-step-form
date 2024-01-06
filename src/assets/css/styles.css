@@ -482,7 +482,7 @@ body {
   justify-content: space-between;
   border: 1px solid var(--light-gray);
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   position: relative;
   cursor: pointer;
 }
@@ -496,12 +496,23 @@ body {
   background-color: var(--alabaster);
 }
 
-.add-ons .addon-options .content label {
+.add-ons .addon-options .content .area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.add-ons .addon-options .content .area .description label {
   cursor: pointer;
 }
 
-.add-ons .addon-options .content input {
+.add-ons .addon-options .content .area input {
   cursor: pointer;
+}
+
+.add-ons .addon-options .content .area .description p {
+  margin: 0;
 }
 /*AddOns*/
 
