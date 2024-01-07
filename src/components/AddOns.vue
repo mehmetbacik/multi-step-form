@@ -25,7 +25,7 @@
                         <p>{{ addon.description }}</p>
                     </div>
                 </div>
-                <p>+${{ calculateAddonPrice(addon.price) }}/{{ billingCycle }}</p>
+                <p class="price">+${{ calculateAddonPrice(addon.price) }}/{{ billingCycle }}</p>
             </div>
         </div>
         <div class="button-area">
