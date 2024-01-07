@@ -528,8 +528,35 @@ body {
   color: var(--purplish-blue);
   font-weight: 500;
 }
-
 /*AddOns*/
+
+/*Summary*/
+.summary {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.summary .headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.summary .headline span {
+  color: var(--marine-blue);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.summary .headline p {
+  color: var(--cool-gray);
+  font-weight: 400;
+  margin: 0;
+}
+/*Summary*/
 
 
 

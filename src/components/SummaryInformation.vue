@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <h2>Step 4: Summary</h2>
+    <div class="summary">
+        <div class="headline">
+            <span>Finishing up</span>
+            <p>Double-check everything looks OK before confirming.</p>
+        </div>
         <div>
             <h3>Select Plan</h3>
             <p>Selected Plan: {{ selectedPlan.name }}</p>
