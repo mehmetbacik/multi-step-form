@@ -18,10 +18,12 @@
                 </li>
             </ul>
         </div>
-        <button @click="prevStep">Back</button>
-        <router-link :title="title" to="/FormCompleted">
-            <button @click="confirm" :disabled="!isConfirmEnabled">Confirm</button>
-        </router-link>
+        <div class="button-area">
+            <button class="back-button" @click="prevStep">Go Back</button>
+            <router-link :title="title" to="/FormCompleted">
+                <button class="next-button" @click="confirm" :disabled="!isConfirmEnabled">Confirm</button>
+            </router-link>
+        </div>
     </div>
 </template>
 

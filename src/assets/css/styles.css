@@ -556,6 +556,45 @@ body {
   font-weight: 400;
   margin: 0;
 }
+
+.summary .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary .button-area button.next-button {
+  padding: 14px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background-color: var(--purplish-blue);
+  color: var(--white);
+}
+
+.summary .button-area button.next-button:hover {
+  background-color: var(--marine-blue);
+  cursor: pointer;
+}
+
+.summary .button-area button.next-button:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+
+.summary .button-area button.back-button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--cool-gray);
+}
+
+.summary .button-area button.back-button:hover {
+  cursor: pointer;
+  color: var(--marine-blue);
+}
 /*Summary*/
 
 
