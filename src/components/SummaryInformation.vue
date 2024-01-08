@@ -4,19 +4,21 @@
             <span>Finishing up</span>
             <p>Double-check everything looks OK before confirming.</p>
         </div>
-        <div>
-            <h3>Select Plan</h3>
-            <p>Selected Plan: {{ selectedPlan.name }}</p>
-            <p>Price: {{ selectedPlan.price[billingCycle] }} {{ billingCycle }}</p>
-            <p>Billing Cycle: {{ billingCycle }}</p>
-        </div>
-        <div>
-            <h3>Add-Ons</h3>
-            <ul>
-                <li v-for="(addon, index) in selectedAddons" :key="index">
-                    {{ addon.name }} - Price: {{ addon.price[billingCycle] }} {{ billingCycle }}
-                </li>
-            </ul>
+        <div class="price-content">
+            <div>
+                <h3>Select Plan</h3>
+                <p>Selected Plan: {{ selectedPlan.name }}</p>
+                <p>Price: {{ selectedPlan.price[billingCycle] }} {{ billingCycle }}</p>
+                <p>Billing Cycle: {{ billingCycle }}</p>
+            </div>
+            <div>
+                <h3>Add-Ons</h3>
+                <ul>
+                    <li v-for="(addon, index) in selectedAddons" :key="index">
+                        {{ addon.name }} - Price: {{ addon.price[billingCycle] }} {{ billingCycle }}
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="button-area">
             <button class="back-button" @click="prevStep">Go Back</button>
@@ -61,14 +63,14 @@ export default {
     data() {
         return {
             plans: [
-                { name: 'Arcade', price: { yearly: 120, monthly: 10 }, description: 'Basic plan for arcade gaming.' },
-                { name: 'Advanced', price: { yearly: 240, monthly: 20 }, description: 'Advanced plan for gaming enthusiasts.' },
-                { name: 'Pro', price: { yearly: 360, monthly: 30 }, description: 'Professional plan for serious gamers.' },
+                { name: 'Arcade', price: { yearly: 120, monthly: 9 }},
+                { name: 'Advanced', price: { yearly: 240, monthly: 12 }},
+                { name: 'Pro', price: { yearly: 360, monthly: 15 }},
             ],
             addons: [
-                { name: 'Online Service', price: { yearly: 50, monthly: 5 }, description: 'Access to online gaming services.' },
-                { name: 'Larger Storage', price: { yearly: 100, monthly: 8 }, description: 'Get additional storage space for your games.' },
-                { name: 'Customizable Profile', price: { yearly: 75, monthly: 10 }, description: 'Customize your gaming profile.' },
+                { name: 'Online Service', price: { yearly: 50, monthly: 1 }},
+                { name: 'Larger Storage', price: { yearly: 100, monthly: 2 }},
+                { name: 'Customizable Profile', price: { yearly: 75, monthly: 2 }},
             ],
         };
     },

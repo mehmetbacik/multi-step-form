@@ -595,6 +595,12 @@ body {
   cursor: pointer;
   color: var(--marine-blue);
 }
+
+.summary .price-content {
+  background-color: var(--alabaster);
+  border-radius: 10px;
+  padding: 20px;
+}
 /*Summary*/
 
 
