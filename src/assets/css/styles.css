@@ -601,6 +601,36 @@ body {
   border-radius: 10px;
   padding: 20px;
 }
+
+.summary .price-content .plan-content  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--light-gray);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.summary .price-content .addons-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.summary .price-content .addons-content ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary .total-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
 /*Summary*/
 
 

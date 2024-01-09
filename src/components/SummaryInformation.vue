@@ -5,20 +5,30 @@
             <p>Double-check everything looks OK before confirming.</p>
         </div>
         <div class="price-content">
-            <div>
-                <h3>Select Plan</h3>
-                <p>Selected Plan: {{ selectedPlan.name }}</p>
-                <p>Price: {{ selectedPlan.price[billingCycle] }} {{ billingCycle }}</p>
-                <p>Billing Cycle: {{ billingCycle }}</p>
+            <div class="plan-content">
+                <div>
+                    <span>{{ selectedPlan.name }} ({{ billingCycle }})</span>
+                </div>
+                <div>
+                    <span>${{ selectedPlan.price[billingCycle] }}/{{ shortBillingCycle }}</span>
+                </div>
             </div>
-            <div>
-                <h3>Add-Ons</h3>
+            <div class="addons-content">
                 <ul>
                     <li v-for="(addon, index) in selectedAddons" :key="index">
-                        {{ addon.name }} - Price: {{ addon.price[billingCycle] }} {{ billingCycle }}
+                        <div>
+                            {{ addon.name }}
+                        </div>
+                        <div>
+                            +${{ addon.price[billingCycle] }}/{{ shortBillingCycle }}
+                        </div>  
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="total-content">
+            <span>Total(per {{ totalBillingCycle }})</span>
+            <span>${{ totalAmount.toFixed(2) }}/{{ shortBillingCycle }}</span>
         </div>
         <div class="button-area">
             <button class="back-button" @click="prevStep">Go Back</button>
@@ -52,12 +62,28 @@ export default {
             const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
             return selectPlanData ? (selectPlanData.isYearly ? 'yearly' : 'monthly') : '';
         },
+        shortBillingCycle() {
+            const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
+            return selectPlanData ? (selectPlanData.isYearly ? 'yr' : 'mo') : '';
+        },
+        totalBillingCycle() {
+            const selectPlanData = JSON.parse(localStorage.getItem('selectPlan'));
+            return selectPlanData ? (selectPlanData.isYearly ? 'year' : 'month') : '';
+        },
         selectedAddons() {
             const savedAddOns = JSON.parse(localStorage.getItem('addOns'));
             return savedAddOns ? savedAddOns.map(addonName => {
                 const addon = this.addons.find(a => a.name === addonName);
                 return addon ? { ...addon, billingCycle: this.billingCycle } : null;
             }).filter(addon => addon !== null) : [];
+        },
+        totalAmount() {
+            const planPrice = this.selectedPlan ? this.selectedPlan.price[this.billingCycle] : 0;
+            const addonsTotal = this.selectedAddons.reduce((total, addon) => {
+                return total + addon.price[this.billingCycle];
+            }, 0);
+
+            return planPrice + addonsTotal;
         },
     },
     data() {
