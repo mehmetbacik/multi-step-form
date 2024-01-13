@@ -15,6 +15,7 @@
                 <div>
                     <span>{{ plan.name }}</span>
                     <p>${{ plan.price[isYearly ? 'yearly' : 'monthly'] }}/{{ billingCycle }}</p>
+                    <p v-if="isYearly" class="plan-description">{{ plan.description }}</p>
                 </div>
             </div>
         </div>
@@ -38,9 +39,9 @@
         data() {
             return {
                 plans: [
-                    { name: 'Arcade', price: { yearly: 120, monthly: 9 }, class: 'arcade-plan' },
-                    { name: 'Advanced', price: { yearly: 240, monthly: 12 }, class: 'advanced-plan' },
-                    { name: 'Pro', price: { yearly: 360, monthly: 15 }, class: 'pro-plan' },
+                    { name: 'Arcade', price: { yearly: 120, monthly: 9 }, description: '2 months free', class: 'arcade-plan' },
+                    { name: 'Advanced', price: { yearly: 240, monthly: 12 }, description: '2 months free', class: 'advanced-plan' },
+                    { name: 'Pro', price: { yearly: 360, monthly: 15 }, description: '2 months free', class: 'pro-plan' },
                 ],
                 selectedPlan: null,
                 isNextButtonActive: false,

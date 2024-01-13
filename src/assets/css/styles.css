@@ -380,11 +380,11 @@ body {
   border-radius: 50%;
 }
 
-.select-plan .billing-toggle  input:checked + .slider {
+.select-plan .billing-toggle input:checked + .slider {
   background-color: var(--marine-blue);
 }
 
-.select-plan .billing-toggle  input:focus + .slider {
+.select-plan .billing-toggle input:focus + .slider {
   box-shadow: 0 0 1px var(--marine-blue);
 }
 
@@ -394,12 +394,18 @@ body {
   transform: translateX(26px);
 }
 
-.select-plan .billing-toggle  .slider.round {
+.select-plan .billing-toggle .slider.round {
   border-radius: 34px;
 }
 
-.select-plan .billing-toggle  .slider.round:before {
+.select-plan .billing-toggle .slider.round:before {
   border-radius: 50%;
+}
+
+.select-plan .plan-options .plan-content div .plan-description {
+  font-size: 12px;
+  color: var(--marine-blue);
+  font-weight: bold;
 }
 /*SelectPlan*/
 
