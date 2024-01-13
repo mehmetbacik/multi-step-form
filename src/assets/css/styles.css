@@ -536,6 +536,7 @@ body {
   margin-right: 60px;
   margin-top: 40px;
   margin-bottom: 20px;
+  width: 440px;
 }
 
 .summary .headline {
@@ -561,6 +562,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 35px;
 }
 
 .summary .button-area button.next-button {
@@ -602,6 +604,10 @@ body {
   padding: 20px;
 }
 
+.summary .price-content .addons-content {
+  min-height: 84px;
+}
+
 .summary .price-content .plan-content  {
   display: flex;
   align-items: center;
@@ -625,12 +631,34 @@ body {
   justify-content: space-between;
 }
 
+.summary .price-content .addons-content ul li .addon-name {
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+.summary .price-content .addons-content ul li .addon-price {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
 .summary .total-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
+
+.summary .total-content .title {
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+.summary .total-content .price {
+  color: var(--purplish-blue);
+  font-weight: bold;
+  font-size: 20px;
+}
+
 
 .summary .price-content .plan-content .plan-price span {
   color: var(--marine-blue);
@@ -645,10 +673,14 @@ body {
   gap: 8px;
 }
 
-.summary .price-content .plan-content .plan-name span {
+.summary .price-content .plan-content .plan-name div {
   color: var(--marine-blue);
   font-weight: bold;
   font-size: 18px;
+}
+
+.summary .price-content .plan-content .plan-name div span {
+  text-transform: capitalize;
 }
 
 .summary .price-content .plan-content .plan-name button {

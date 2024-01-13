@@ -7,7 +7,7 @@
       <div class="price-content">
         <div class="plan-content">
           <div class="plan-name">
-            <span>{{ selectedPlan.name }} ({{ billingCycle }})</span>
+            <div>{{ selectedPlan.name }} <span>({{ billingCycle }})</span></div>
             <button @click="changeBillingCycle">Change</button>
           </div>
           <div class="plan-price">
@@ -24,16 +24,14 @@
         </div>
       </div>
       <div class="total-content">
-        <span>Total(per {{ totalBillingCycle }})</span>
-        <span>${{ totalAmount.toFixed(2) }}/{{ shortBillingCycle }}</span>
+        <span class="title">Total (per {{ totalBillingCycle }})</span>
+        <span class="price">+${{ totalAmount.toFixed(2) }}/{{ shortBillingCycle }}</span>
       </div>
       <div class="button-area">
         <button class="back-button" @click="prevStep">Go Back</button>
-        <router-link :title="title" to="/FormCompleted">
-          <button class="next-button" @click="confirm" :disabled="!isConfirmEnabled">
+        <button class="next-button" @click="confirm" :disabled="!isConfirmEnabled">
             Confirm
-          </button>
-        </router-link>
+        </button>
       </div>
     </div>
   </template>
