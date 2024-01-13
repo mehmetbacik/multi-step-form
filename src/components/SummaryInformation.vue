@@ -6,19 +6,19 @@
       </div>
       <div class="price-content">
         <div class="plan-content">
-          <div>
+          <div class="plan-name">
             <span>{{ selectedPlan.name }} ({{ billingCycle }})</span>
             <button @click="changeBillingCycle">Change</button>
           </div>
-          <div>
+          <div class="plan-price">
             <span>${{ selectedPlan.price[billingCycle] }}/{{ shortBillingCycle }}</span>
           </div>
         </div>
         <div class="addons-content">
           <ul>
             <li v-for="(addon, index) in selectedAddons" :key="index">
-              <div>{{ addon.name }}</div>
-              <div>${{ addon.price[billingCycle] }}/{{ shortBillingCycle }}</div>
+              <div class="addon-name">{{ addon.name }}</div>
+              <div class="addon-price">${{ addon.price[billingCycle] }}/{{ shortBillingCycle }}</div>
             </li>
           </ul>
         </div>
