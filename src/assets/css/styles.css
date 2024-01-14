@@ -665,7 +665,6 @@ body {
   font-size: 20px;
 }
 
-
 .summary .price-content .plan-content .plan-price span {
   color: var(--marine-blue);
   font-weight: bold;
@@ -702,8 +701,14 @@ body {
 }
 /*Summary*/
 
-
-
+/*Complete*/
+.completed {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+/*Complete*/
 
 
 
