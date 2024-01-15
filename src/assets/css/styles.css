@@ -709,11 +709,11 @@ body {
   margin-bottom: 20px;
 }
 
-.completed .headline::before {
+.completed .complete-content .headline::before {
   content: url(/src/assets/image/icon-thank-you.svg);
 }
 
-.completed .headline {
+.completed .complete-content .headline {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -724,8 +724,33 @@ body {
   color: var(--marine-blue);
 }
 
-.completed .text {
+.completed .complete-content .text {
   color: var(--cool-gray);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.completed .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.completed .button-area .completed-button {
+  padding: 14px 27px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background-color: var(--purplish-blue);
+  color: var(--white);
+}
+
+.completed .button-area .completed-button:hover {
+  background-color: var(--marine-blue);
+  cursor: pointer;
 }
 /*Completed*/
 
