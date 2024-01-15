@@ -1,8 +1,12 @@
 <template>
   <div class="completed">
-    <h2>Completed</h2>
-    <p>Congratulations! You have completed the multi-step form.</p>
-    <button @click="restart">Begin Again</button>
+    <span class="headline">Thank you!</span>
+    <p class="text">
+      Thanks for confirming your subscription! We hope you have fun using our
+      platform. If you ever need support, please feel free to email us at
+      support@loremgaming.com.
+    </p>
+    <button class="completed.button" @click="restart">Begin Again</button>
   </div>
 </template>
 
@@ -11,7 +15,8 @@ export default {
   methods: {
     restart() {
       localStorage.clear();
-      this.$router.push({ path: "/" });
+      //this.$router.push({ path: "/" });
+      window.location.reload();
     },
   },
 };
