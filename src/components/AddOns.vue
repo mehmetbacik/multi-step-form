@@ -8,7 +8,7 @@
             <div
                 v-for="(addon, index) in addons"
                 :key="index"
-                class="content"
+                class="addon-content"
                 :class="{ 'selected-addon': selectedAddons.includes(addon.name) }"
                 @click="toggleAddon(addon.name)"
             >

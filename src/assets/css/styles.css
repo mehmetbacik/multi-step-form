@@ -24,6 +24,11 @@ body {
   border-radius: 15px;
   padding: 20px;
 }
+
+#app .form-content .content {
+  width: 563px;
+  height: 544px;
+}
 /*FormMain*/
 
 /*ProgressBar*/
@@ -482,7 +487,7 @@ body {
   margin-bottom: 50px;
 }
 
-.add-ons .addon-options .content {
+.add-ons .addon-options .addon-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -494,42 +499,42 @@ body {
   cursor: pointer;
 }
 
-.add-ons .addon-options .content:hover {
+.add-ons .addon-options .addon-content:hover {
   border-color: var(--purplish-blue);
 }
 
-.add-ons .addon-options .content.selected-addon {
+.add-ons .addon-options .addon-content.selected-addon {
   border-color: var(--purplish-blue);
   background-color: var(--alabaster);
 }
 
-.add-ons .addon-options .content .area {
+.add-ons .addon-options .addon-content .area {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
 }
 
-.add-ons .addon-options .content .area .description label {
+.add-ons .addon-options .addon-content .area .description label {
   cursor: pointer;
   font-weight: bold;
   color: var(--marine-blue);
 }
 
-.add-ons .addon-options .content .area .description p {
+.add-ons .addon-options .addon-content .area .description p {
   margin: 0;
   padding-top: 5px;
   font-weight: 500;
   color: var(--cool-gray);
 }
 
-.add-ons .addon-options .content .area input {
+.add-ons .addon-options .addon-content .area input {
   cursor: pointer;
   width: 20px;
   height: 20px;
 }
 
-.add-ons .addon-options .content .price {
+.add-ons .addon-options .addon-content .price {
   margin: 0;
   color: var(--purplish-blue);
   font-weight: 500;
@@ -707,6 +712,10 @@ body {
   margin-right: 60px;
   margin-top: 40px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: -webkit-fill-available;
 }
 
 .completed .complete-content .headline::before {
