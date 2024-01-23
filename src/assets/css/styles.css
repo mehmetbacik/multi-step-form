@@ -32,7 +32,7 @@ body {
 /*FormMain*/
 
 /*ProgressBar*/
-.progress-bar {
+#app .form-content .progress-bar {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -44,31 +44,31 @@ body {
   padding: 30px;
 }
   
-.progress-bar .steps {
+#app .form-content .progress-bar .steps {
   text-align: center;
   display: flex;
   align-items: center;
   gap: 15px;
 }
   
-.progress-bar .steps.active {
+#app .form-content .progress-bar .steps.active {
   color: var(--white);
 }
 
-.progress-bar .steps .step-headline {
+#app .form-content .progress-bar .steps .step-headline {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 3px;
 }
 
-.progress-bar .steps .step-headline .step-label {
+#app .form-content .progress-bar .steps .step-headline .step-label {
   text-transform: uppercase;
   font-size: 14px;
   color: var(--cool-gray);
 }
 
-.progress-bar .steps .step-headline .step-title {
+#app .form-content .progress-bar .steps .step-headline .step-title {
   text-transform: uppercase;
   font-size: 14px;
   color: var(--white);
@@ -76,7 +76,7 @@ body {
   letter-spacing: 2px;
 }
 
-.progress-bar .steps .step-number {
+#app .form-content .progress-bar .steps .step-number {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +89,7 @@ body {
   height: 30px;
 }
 
-.progress-bar .steps.active .step-number {
+#app .form-content .progress-bar .steps.active .step-number {
   border: solid 1px var(--light-blue);
   background-color: var(--light-blue);
   color: var(--marine-blue);
@@ -763,7 +763,88 @@ body {
 }
 /*Completed*/
 
+@media (max-width: 575px) { 
+/*FormMain*/
+  body {
+    margin: 0;
+  }
 
+  #app {
+    align-items: flex-start;
+  }
+
+  #app .form-content {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #app .form-content .content {
+    width: 100%;
+    height: 100%;
+  }
+/*FormMain*/
+
+/*ProgressBar*/
+  #app .form-content .progress-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-image: url(../image/bg-sidebar-mobile.svg);
+    background-size: cover;
+    border-radius: 0px;
+    padding: 70px;
+  }
+    
+  #app .form-content .progress-bar .steps {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+    
+  #app .form-content .progress-bar .steps.active {
+    color: var(--white);
+  }
+
+  #app .form-content .progress-bar .steps .step-headline {
+    display: none;
+  }
+
+  #app .form-content .progress-bar .steps .step-headline .step-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--cool-gray);
+  }
+
+  #app .form-content .progress-bar .steps .step-headline .step-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  #app .form-content .progress-bar .steps .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--white);
+    background-color: transparent;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+  }
+
+  #app .form-content .progress-bar .steps.active .step-number {
+    border: solid 1px var(--light-blue);
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
+  }
+/*ProgressBar*/
+}
 
 
 
