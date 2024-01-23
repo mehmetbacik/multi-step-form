@@ -767,6 +767,7 @@ body {
 /*FormMain*/
   body {
     margin: 0;
+    background-color: var(--magnolia);
   }
 
   #app {
@@ -776,11 +777,16 @@ body {
   #app .form-content {
     flex-direction: column;
     padding: 0;
+    position: relative;
+    height: calc(95vh - 30px);
+    background-color: transparent;
   }
 
   #app .form-content .content {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 10%;
   }
 /*FormMain*/
 
@@ -795,55 +801,117 @@ body {
     border-radius: 0px;
     padding: 70px;
   }
-    
-  #app .form-content .progress-bar .steps {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-    
-  #app .form-content .progress-bar .steps.active {
-    color: var(--white);
-  }
 
   #app .form-content .progress-bar .steps .step-headline {
     display: none;
   }
-
-  #app .form-content .progress-bar .steps .step-headline .step-label {
-    text-transform: uppercase;
-    font-size: 14px;
-    color: var(--cool-gray);
-  }
-
-  #app .form-content .progress-bar .steps .step-headline .step-title {
-    text-transform: uppercase;
-    font-size: 14px;
-    color: var(--white);
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  #app .form-content .progress-bar .steps .step-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px var(--white);
-    background-color: transparent;
-    color: var(--white);
-    font-weight: bold;
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-  }
-
-  #app .form-content .progress-bar .steps.active .step-number {
-    border: solid 1px var(--light-blue);
-    background-color: var(--light-blue);
-    color: var(--marine-blue);
-  }
 /*ProgressBar*/
+
+/*YourInfo*/
+.your-info {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}/**/
+
+.your-info .headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.your-info .headline span {
+  color: var(--marine-blue);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.your-info .headline p {
+  color: var(--cool-gray);
+  font-weight: 400;
+  margin: 0;
+}
+
+.your-info form .input-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.your-info form .input-content .title-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.your-info form .input-content .title-area label {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
+.your-info form .input-content .title-area .error-message {
+  color: var(--strawberry-red);
+  font-weight: bold;
+}
+
+.your-info form .input-content input {
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  color: var(--marine-blue);
+  font-weight: bold;
+}
+
+.your-info form .input-content input:focus {
+  border-color: var(--purplish-blue);
+}
+
+.your-info form .input-content input::placeholder {
+  color: var(--marine-blue);
+}
+
+.your-info form .input-content .is-invalid {
+  border: 1px solid var(--strawberry-red);
+}
+
+.your-info form .button-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  width: 100%;
+}/**/
+
+.your-info form .button-area button.next-button {
+  padding: 14px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background-color: var(--purplish-blue);
+  color: var(--white);
+}
+
+.your-info form .button-area button.next-button:hover {
+  background-color: var(--marine-blue);
+  cursor: pointer;
+}
+
+.your-info form .button-area button.next-button:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+/*YourInfo*/
 }
 
 
