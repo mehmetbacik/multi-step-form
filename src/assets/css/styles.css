@@ -863,6 +863,34 @@ body {
   font-size: 28px;
 }
 
+.select-plan .plan-options {
+  flex-direction: column;
+  margin-bottom: 0px;
+  gap: 10px;
+}
+
+.select-plan .plan-options .plan-content {
+  margin-bottom: 0px;
+  width: -webkit-fill-available;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px;
+}
+
+.select-plan .billing-toggle {
+  margin-bottom: 0px;
+}
+
+.select-plan .button-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  width: 100%;
+}
+
 /*SelectPlan*/
 }
 
@@ -872,6 +900,10 @@ body {
   }
 
   .your-info {
+    margin-top: 20px;
+  }
+
+  .select-plan {
     margin-top: 20px;
   }
 }
