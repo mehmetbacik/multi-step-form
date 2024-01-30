@@ -890,8 +890,68 @@ body {
   background-color: var(--white);
   width: 100%;
 }
-
 /*SelectPlan*/
+/*Add-Ons*/
+.add-ons {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.add-ons .headline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.add-ons .headline span {
+  font-size: 28px;
+}
+
+.add-ons .addon-options {
+  gap: 10px;
+}
+
+.add-ons .addon-options .addon-content {
+  gap: 5px;
+  padding: 12px;
+}
+
+.add-ons .addon-options .addon-content .area {
+  gap: 12px;
+}
+
+.add-ons .addon-options .addon-content .area .description label {
+  font-size: 14px;
+}
+
+.add-ons .addon-options .addon-content .area .description p {
+  font-size: 12px;
+}
+
+.add-ons .addon-options .addon-content .price {
+  font-size: 12px;
+}
+
+.add-ons .addon-options {
+  margin-bottom: 0px;
+}
+
+.add-ons .button-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  width: 100%;
+}
+/*Add-Ons*/
 }
 
 @media (max-width: 320px) {
@@ -904,6 +964,10 @@ body {
   }
 
   .select-plan {
+    margin-top: 20px;
+  }
+
+  .add-ons {
     margin-top: 20px;
   }
 }
