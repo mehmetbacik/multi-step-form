@@ -961,6 +961,7 @@ body {
   margin-right: 25px;
   margin-top: 50px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: fit-content;
 }
 
 .summary .headline {
@@ -974,7 +975,36 @@ body {
   font-size: 28px;
 }
 
+.summary .button-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.summary .total-content .price {
+  font-size: 15px;
+}
+
+.summary .total-content .title {
+  font-size: 14px;
+}
 /*Summary*/
+/*Completed*/
+.completed {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: fit-content;
+}
+/*Completed*/
 }
 
 @media (max-width: 320px) {
@@ -996,6 +1026,14 @@ body {
 
   .summary {
     margin-top: 20px;
+  }
+
+  .completed {
+    margin-top: 20px;
+  }
+
+  .completed .complete-content .text {
+    font-size: 15px;
   }
 }
 
