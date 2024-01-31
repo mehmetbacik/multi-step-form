@@ -763,7 +763,35 @@ body {
 }
 /*Completed*/
 
-@media (max-width: 575px) { 
+@media screen and (min-width: 769px) and (max-width:992px) {
+  #app {
+    height: calc(100vh - 20px);
+  }
+
+  #app .form-content {
+    margin: 25px;
+  }
+
+  #app .form-content .content {
+    width: auto;
+  }
+
+  #app .form-content .progress-bar {
+    width: 260px;
+    padding: 20px;
+  }
+
+  #app .form-content .progress-bar .steps .step-headline .step-label {
+    font-size: 13px;
+  }
+
+  #app .form-content .progress-bar .steps .step-headline .step-title {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 768px) { 
 /*FormMain*/
   body {
     margin: 0;
@@ -961,7 +989,7 @@ body {
   margin-right: 25px;
   margin-top: 50px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: fit-content;
+  width: auto;
 }
 
 .summary .headline {
