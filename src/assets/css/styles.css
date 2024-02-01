@@ -770,6 +770,8 @@ body {
 
   #app .form-content {
     margin: 25px;
+    height: 570px;
+    width: 650px;
   }
 
   #app .form-content .content {
@@ -787,6 +789,15 @@ body {
 
   #app .form-content .progress-bar .steps .step-headline .step-title {
     font-size: 13px;
+  }
+
+  .select-plan .plan-options {
+    flex-direction: column;
+  }
+
+  .select-plan .plan-options .plan-content {
+    width: auto;
+    flex-direction: row;
   }
 
 }
