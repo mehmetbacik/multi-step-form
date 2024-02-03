@@ -779,7 +779,7 @@ body {
   }
 
   #app .form-content .progress-bar {
-    width: 260px;
+    min-width: 200px;
     padding: 20px;
   }
 
@@ -791,6 +791,14 @@ body {
     font-size: 13px;
   }
 
+  .your-info .headline span {
+    font-size: 25px;
+  }
+
+  .your-info .headline {
+    margin-bottom: 25px;
+  }
+
   .select-plan .plan-options {
     flex-direction: column;
   }
@@ -798,6 +806,28 @@ body {
   .select-plan .plan-options .plan-content {
     width: auto;
     flex-direction: row;
+  }
+
+  .select-plan .headline span {
+    font-size: 25px;
+  }
+
+  .select-plan .headline {
+    margin-bottom: 25px;
+  }
+
+  .select-plan .plan-options .plan-content {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .select-plan .plan-options {
+    gap: 0px;
+  }
+
+  .select-plan .billing-toggle {
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
 
 }
