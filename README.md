@@ -35,7 +35,7 @@ To clone the project, run the following commands:
 git clone https://github.com/mehmetbacik/multi-step-form.git
 ```
 ```
-cd interactive-comments
+cd multi-step-form
 ```
 
 ## Project setup
